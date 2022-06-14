@@ -3,7 +3,6 @@ import {
   NavLink,
   Switch,
   Route,
-  useParams,
   useRouteMatch,
 } from "react-router-dom";
 import useFetch from "./useFetch.js";
@@ -14,16 +13,16 @@ import ProductDetailStorage from "./ProductDetailStorage.js";
 export default function ProductDetails(props) {
   const [product, setProduct] = useState({});
   const { get } = useFetch("https://react-tutorial-demo.firebaseio.com/");
-  const params = useParams();
   const match = useRouteMatch();
+  console.log(match);
 
   useEffect(() => {
-    get(`productinfo/id${params.id}.json`)
+    get(`productinfo/id${match.params.id}.json`)
       .then((data) => {
         setProduct(data);
       })
       .catch((error) => console.log("Could not load product details", error));
-  }, []);
+  }, [get, match.params.id]);
 
   return (
     <div className="product-details-layout">

@@ -1,10 +1,12 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { loadStripe } from "@stripe/stripe-js";
 import Input from "./Input.js";
 import Button from "./Button.js";
+import { priceIds } from "./constants/price_ids.js";
 
-// TODO: Replace with your own publishable key
-const stripeLoadedPromise = loadStripe("PK_REPLACE_WITH_YOUR_PUBLISHABLE_KEY");
+const stripeLoadedPromise = loadStripe(
+  "pk_test_51LAXoJKEuYshIWSjKwpT00WBlbBmTv6euwrTYAQopI86IY1kkwVyQ4VFYwR9goQitr6jBtS5lZ3GyE6zlMU4TKpf003wlKpfH8"
+);
 
 export default function Cart({ cart }) {
   const totalPrice = cart.reduce(
@@ -18,16 +20,16 @@ export default function Cart({ cart }) {
     event.preventDefault();
 
     const lineItems = cart.map((product) => {
-      return { price: product.price_id, quantity: product.quantity };
+      return { price: priceIds[`${product.name}`], quantity: product.quantity };
     });
-
+    console.log(lineItems)
     stripeLoadedPromise.then((stripe) => {
       stripe
         .redirectToCheckout({
           lineItems: lineItems,
           mode: "payment",
-          successUrl: "https://superm.react-tutorial.app/",
-          cancelUrl: "https://superm.react-tutorial.app/",
+          successUrl: "https://www.google.com",
+          cancelUrl: "https://www.ya.ru",
           customerEmail: email,
         })
         .then((response) => {
