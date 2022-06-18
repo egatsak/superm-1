@@ -1,28 +1,34 @@
 import React, { useState } from "react";
+import { useSelector } from "react-redux";
+import { cartValueSelector } from "../redux/slices/cart";
 import { loadStripe } from "@stripe/stripe-js";
+
 import Input from "./Generic/Input";
 import Button from "./Generic/Button";
+
+import { priceIds } from "../constants/price_ids.js";
 
 const stripeLoadedPromise = loadStripe(
   "pk_test_51LAXoJKEuYshIWSjKwpT00WBlbBmTv6euwrTYAQopI86IY1kkwVyQ4VFYwR9goQitr6jBtS5lZ3GyE6zlMU4TKpf003wlKpfH8"
 );
 
-export default function Cart({ cart }) {
-  const totalPrice = cart.reduce(
+export default function Cart() {
+  const [email, setEmail] = useState("");
+
+  const cart = useSelector((state) => state.cart);
+  const totalPrice = useSelector(cartValueSelector);
+  /* const totalPrice = cart.reduce(
     (total, product) => total + product.price * product.quantity,
     0
-  );
-
-  const [email, setEmail] = useState("");
+  ); */
 
   function handleFormSubmit(event) {
     event.preventDefault();
 
     const lineItems = cart.map((product) => {
-      console.log(product)
-      return { price: product.price_id, quantity: product.quantity };
+      return { price: priceIds[product.id], quantity: product.quantity };
     });
-    console.log(lineItems)
+
     stripeLoadedPromise.then((stripe) => {
       stripe
         .redirectToCheckout({

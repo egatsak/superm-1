@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { NavLink, Switch, Route, useRouteMatch } from "react-router-dom";
 import useFetch from "../../utils/useFetch";
 import ProductDetailInfo from "./ProductDetailInfo";
