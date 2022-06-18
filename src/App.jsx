@@ -1,11 +1,14 @@
 import { useState, useEffect } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import Navbar from "./Navbar.js";
-import Home from "./Home.js";
-import About from "./About.js";
-import Products from "./Products.js";
-import ProductDetails from "./ProductDetails.js";
-import Cart from "./Cart.js";
+import Navbar from "./components/Navbar/Navbar";
+import Home from "./components/Home";
+import About from "./components/About";
+import Products from "./components/Products";
+import ProductDetails from "./components/Product/ProductDetails";
+import Cart from "./components/Cart";
+import Footer from './components/Footer/Footer'
+
+import { priceIds } from "./constants/price_ids.js";
 
 function App() {
   const [cart, setCart] = useState(function () {
@@ -39,7 +42,7 @@ function App() {
       const updatedCart = cart.map((product) => {
         if (product.id === newProduct.id) {
           return {
-            ...product,
+            ...product, 
             quantity: product.quantity + 1,
           };
         }
@@ -52,13 +55,16 @@ function App() {
         ...cart,
         {
           ...newProduct,
+          price_id: priceIds[newProduct.id],
           quantity: 1,
         },
       ]);
+    console.log(cart)
     }
   }
 
   return (
+    <>
     <BrowserRouter>
       <Navbar cart={cart} />
       <div className="container">
@@ -85,6 +91,8 @@ function App() {
         </Switch>
       </div>
     </BrowserRouter>
+    <Footer />
+    </>
   );
 }
 

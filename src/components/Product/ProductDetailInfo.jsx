@@ -1,4 +1,4 @@
-import Button from "./Button.js";
+import Button from "../Generic/Button";
 
 export default function ProductDetailInfo({ product, onProductAdd }) {
   return (

@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { loadStripe } from "@stripe/stripe-js";
-import Input from "./Input.js";
-import Button from "./Button.js";
-import { priceIds } from "./constants/price_ids.js";
+import Input from "./Generic/Input";
+import Button from "./Generic/Button";
 
 const stripeLoadedPromise = loadStripe(
   "pk_test_51LAXoJKEuYshIWSjKwpT00WBlbBmTv6euwrTYAQopI86IY1kkwVyQ4VFYwR9goQitr6jBtS5lZ3GyE6zlMU4TKpf003wlKpfH8"
@@ -20,7 +19,8 @@ export default function Cart({ cart }) {
     event.preventDefault();
 
     const lineItems = cart.map((product) => {
-      return { price: priceIds[`${product.name}`], quantity: product.quantity };
+      console.log(product)
+      return { price: product.price_id, quantity: product.quantity };
     });
     console.log(lineItems)
     stripeLoadedPromise.then((stripe) => {
@@ -59,7 +59,7 @@ export default function Cart({ cart }) {
                     Product
                   </th>
                   <th width="20%">Unit price</th>
-                  <th width="10%">Quanity</th>
+                  <th width="10%">Quantity</th>
                   <th width="25%">Total</th>
                 </tr>
               </thead>

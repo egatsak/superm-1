@@ -1,20 +1,14 @@
 import { useState, useEffect } from "react";
-import {
-  NavLink,
-  Switch,
-  Route,
-  useRouteMatch,
-} from "react-router-dom";
-import useFetch from "./useFetch.js";
-import ProductDetailInfo from "./ProductDetailInfo.js";
-import ProductDetailNutrition from "./ProductDetailNutrition.js";
-import ProductDetailStorage from "./ProductDetailStorage.js";
+import { NavLink, Switch, Route, useRouteMatch } from "react-router-dom";
+import useFetch from "../../utils/useFetch";
+import ProductDetailInfo from "./ProductDetailInfo";
+import ProductDetailNutrition from "./ProductDetailNutrition";
+import ProductDetailStorage from "./ProductDetailStorage";
 
 export default function ProductDetails(props) {
   const [product, setProduct] = useState({});
   const { get } = useFetch("https://react-tutorial-demo.firebaseio.com/");
   const match = useRouteMatch();
-  console.log(match);
 
   useEffect(() => {
     get(`productinfo/id${match.params.id}.json`)
@@ -22,7 +16,8 @@ export default function ProductDetails(props) {
         setProduct(data);
       })
       .catch((error) => console.log("Could not load product details", error));
-  }, [get, match.params.id]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [match.params.id]);
 
   return (
     <div className="product-details-layout">

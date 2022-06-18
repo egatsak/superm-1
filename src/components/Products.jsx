@@ -1,21 +1,23 @@
 import { useState, useEffect } from "react";
-import Product from "./Product.js";
-import useFetch from "./useFetch.js";
-import Loader from "./Loader.js";
+import Product from "./Product/Product";
+import useFetch from "../utils/useFetch";
+import Loader from "./Generic/Loader";
 
 export default function Products(props) {
+  console.log(props)
   const [products, setProducts] = useState([]);
   const { get, loading } = useFetch(
     "https://react-tutorial-demo.firebaseio.com/"
   );
-
+    console.log(products);
   useEffect(() => {
     get("supermarket.json")
       .then((data) => {
         setProducts(data);
       })
       .catch((error) => console.log("Could not load products", error));
-  }, [get]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <div className="products-layout">
