@@ -1,4 +1,5 @@
 import React from "react";
+import AboutImage from '../assets/about.jpg'
 
 export default function About() {
   return (
@@ -14,11 +15,11 @@ export default function About() {
         </p>
       </div>
       <img
-        src="https://res.cloudinary.com/dbfn5lnvx/image/upload/q_auto,w_550/v1607770215/react-tutorial/supermarket/about.jpg"
+        src={AboutImage}
         height="275"
         width="183"
         className="rounded"
-        alt=""
+        alt="About"
       />
     </div>
   );

@@ -62,7 +62,6 @@ export default function ProductDetails(props) {
         <Switch>
           <Route exact path={match.path}>
             <ProductDetailInfo
-              onProductAdd={props.onProductAdd}
               product={product}
             />
           </Route>
