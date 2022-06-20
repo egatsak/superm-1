@@ -4,7 +4,7 @@ Based on React Tutorial App by Jad Joubran
 https://react-tutorial.app
 
 <p>
-<a href="https://redux--celadon-monstera-6b69be.netlify.app/">
+<a href="https://celadon-monstera-6b69be.netlify.app/">
       Demo deployed at Netlify
 </a>
 </p>
