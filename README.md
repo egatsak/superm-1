@@ -1,80 +1,62 @@
-# SuperM React Tutorial
+<h1 align="center">SuperM Online Shop with Stripe Integrated</h1>
 
+Based on React Tutorial App by Jad Joubran
 https://react-tutorial.app
 
-Feel free to remix the project. You can use it for your job interview, to start your own project. You can add features, remove features, host it online. The only **restriction** is hosting the original project with the instructions that were provided on React Tutorial.
+<p>
+<a href="https://redux--celadon-monstera-6b69be.netlify.app/">
+      Demo deployed at Netlify
+</a>
+</p>
 
-Get started by running `npm install` and then `npm run start`
+## Table of Contents
 
----
+- [Overview](#overview)
+  - [Built With](#built-with)
+- [How to use](#how-to-use)
+- [Contact](#contact)
+- [Acknowledgements](#acknowledgements)
 
-# Getting Started with Create React App
+## Overview
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![screenshot](https://user-images.githubusercontent.com/103357389/174576137-16e1f051-b7a1-4aaf-8b17-7119e888116e.JPG)
 
-## Available Scripts
+SuperM - A simplified single-page online shop with integrated demo Stripe Checkout.
+User can view products description, add products to the cart, manage cart and make payment via Stripe.
+Current cart is being saved in Localstorage and is accessible after page reload or browser restart.
 
-In the project directory, you can run:
+### Built With
 
-### `yarn start`
+- [React](https://reactjs.org/)
+- [Redux Toolkit](https://redux-toolkit.js.org)
+- [React-Redux](https://react-redux.js.org/)
+- [Redux Persist](https://www.npmjs.com/package/redux-persist)
+- [React Router](https://reactrouter.com/)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## How To Use
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+To clone and run this application, you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer. From your command line:
 
-### `yarn test`
+```bash
+# Clone this repository
+$ git clone https://github.com/egatsak/superm-1
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# Install dependencies
+$ npm install
 
-### `yarn build`
+# Run the app
+$ npm start
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Acknowledgements
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- [Jad Joubran & react-tutorial.app](https://react-tutorial.app/)
+- [Node.js](https://nodejs.org/)
+- [Marked - a markdown parser](https://github.com/chjj/marked)
+- [normalize.css](https://github.com/necolas/normalize.css)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Contact
 
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- GitHub [@egatsak](https://github.com/egatsak)
+- LinkedIn [LinkedIn](https://www.linkedin.com/in/yauheni-hatsak-39312023b/)
+- E-mail [greenglaz@gmail.com](mailto:greenglaz@gmail.com)

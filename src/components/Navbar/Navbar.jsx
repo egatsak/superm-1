@@ -1,10 +1,11 @@
+import React from "react";
+import { useSelector } from "react-redux";
+import { cartCountSelector } from "../../redux/slices/cart";
+
 import { NavLink } from "react-router-dom";
 
-export default function Navbar(props) {
-  const cartCount = props.cart.reduce(
-    (total, product) => total + product.quantity,
-    0
-  );
+export default function Navbar() {
+  const cartCount = useSelector(cartCountSelector);
 
   return (
     <nav className="navbar">

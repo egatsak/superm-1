@@ -1,4 +1,7 @@
+import React from "react";
 import { Link } from "react-router-dom";
+
+import HomeImage from "../assets/home.jpg";
 
 export default function Home() {
   return (
@@ -14,7 +17,7 @@ export default function Home() {
         </Link>
       </div>
       <img
-        src="https://res.cloudinary.com/dbfn5lnvx/image/upload/q_auto,w_700/v1607770215/react-tutorial/supermarket/home.jpg"
+        src={HomeImage}
         width="350"
         height="240"
         className="rounded home-image"

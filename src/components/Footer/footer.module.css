@@ -1,0 +1,16 @@
+.footer {
+  flex: 0 0 auto;
+  padding-bottom: 12px;
+  font-family: "Montserrat";
+  line-height: 17px;
+  text-align: center;
+  color: var(--primary-1);
+}
+
+.text {
+  font-weight: 500;
+}
+
+.bold {
+  font-weight: 700;
+}

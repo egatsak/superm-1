@@ -1,3 +1,5 @@
+import React from "react";
+
 export default function ProductDetailNutrition({ nutrition }) {
   return (
     <table className="table table-nutrition">

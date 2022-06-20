@@ -1,34 +1,37 @@
 import React, { useState } from "react";
+import { useSelector } from "react-redux";
+import { cartValueSelector } from "../redux/slices/cart";
 import { loadStripe } from "@stripe/stripe-js";
-import Input from "./Input.js";
-import Button from "./Button.js";
-import { priceIds } from "./constants/price_ids.js";
+
+import Input from "./Generic/Input";
+import Button from "./Generic/Button";
+
+import { priceIds } from "../constants/price_ids.js";
 
 const stripeLoadedPromise = loadStripe(
   "pk_test_51LAXoJKEuYshIWSjKwpT00WBlbBmTv6euwrTYAQopI86IY1kkwVyQ4VFYwR9goQitr6jBtS5lZ3GyE6zlMU4TKpf003wlKpfH8"
 );
 
-export default function Cart({ cart }) {
-  const totalPrice = cart.reduce(
-    (total, product) => total + product.price * product.quantity,
-    0
-  );
-
+export default function Cart() {
   const [email, setEmail] = useState("");
+
+  const cart = useSelector((state) => state.cart);
+  const totalPrice = useSelector(cartValueSelector);
 
   function handleFormSubmit(event) {
     event.preventDefault();
 
     const lineItems = cart.map((product) => {
-      return { price: priceIds[`${product.name}`], quantity: product.quantity };
+      return { price: priceIds[product.id], quantity: product.quantity };
     });
-    console.log(lineItems)
+
     stripeLoadedPromise.then((stripe) => {
       stripe
         .redirectToCheckout({
           lineItems: lineItems,
           mode: "payment",
-          successUrl: "https://www.google.com",
+          successUrl:
+            "https://redux--celadon-monstera-6b69be.netlify.app/paymentsuccessful",
           cancelUrl: "https://www.ya.ru",
           customerEmail: email,
         })
@@ -59,7 +62,7 @@ export default function Cart({ cart }) {
                     Product
                   </th>
                   <th width="20%">Unit price</th>
-                  <th width="10%">Quanity</th>
+                  <th width="10%">Quantity</th>
                   <th width="25%">Total</th>
                 </tr>
               </thead>
@@ -98,10 +101,7 @@ export default function Cart({ cart }) {
                 Enter your email and then click on pay and your products will be
                 delivered to you on the same day!
                 <br />
-                <em>
-                  Enter your own Stripe Publishable Key in Cart.js for the
-                  checkout to work
-                </em>
+                <em>We use Stripe to process your payment.</em>
               </p>
               <Input
                 placeholder="Email"
