@@ -1,11 +1,13 @@
-
 <h1 align="center">SuperM Online Shop with Stripe Integrated</h1>
+
 Based on React Tutorial App by Jad Joubran
 https://react-tutorial.app
 
+<p>
 <a href="https://redux--celadon-monstera-6b69be.netlify.app/">
       Demo deployed at Netlify
 </a>
+</p>
 
 ## Table of Contents
 
@@ -20,7 +22,7 @@ https://react-tutorial.app
 ![screenshot](https://user-images.githubusercontent.com/103357389/174576137-16e1f051-b7a1-4aaf-8b17-7119e888116e.JPG)
 
 SuperM - A simplified single-page online shop with integrated demo Stripe Checkout.
-User can view products description, add products to the cart, manage cart and make payment via Stripe. 
+User can view products description, add products to the cart, manage cart and make payment via Stripe.
 Current cart is being saved in Localstorage and is accessible after page reload or browser restart.
 
 ### Built With
