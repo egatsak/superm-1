@@ -10,16 +10,19 @@ import Products from "./components/Products";
 import ProductDetails from "./components/Product/ProductDetails";
 import Cart from "./components/Cart";
 import Footer from "./components/Footer/Footer";
+import Loader from './components/Generic/Loader'
 
 import { persistor, store } from "./redux/store";
+import PaymentSuccessful from "./components/PaymentSuccessful";
 
 function App() {
   return (
     <>
       <Provider store={store}>
-      <PersistGate loading={null} persistor={persistor}>
+      <PersistGate loading={<Loader />} persistor={persistor}>
+      <div className="app-wrapper">
         <BrowserRouter>
-          <Navbar />
+         <Navbar />
           <div className="container">
             <Switch>
               <Route exact path="/">
@@ -37,10 +40,14 @@ function App() {
               <Route exact path="/cart">
                 <Cart />
               </Route>
+              <Route exact path='/paymentsuccessful'>
+                <PaymentSuccessful />
+              </Route>
             </Switch>
           </div>
         </BrowserRouter>
         <Footer />
+        </div>
         </PersistGate>
       </Provider>
     </>

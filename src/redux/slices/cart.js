@@ -29,6 +29,10 @@ const cartValueSelector = (state) => {
   );
 };
 
+const cartCountSelector = (state) => {
+  return state.cart.reduce((sum, current) => sum + current.quantity, 0);
+};
+
 export const { addProduct, removeProduct } = cartSlice.actions;
 
-export { /* cartCountSelector, */ cartValueSelector };
+export { cartCountSelector, cartValueSelector };

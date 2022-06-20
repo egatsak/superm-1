@@ -17,10 +17,6 @@ export default function Cart() {
 
   const cart = useSelector((state) => state.cart);
   const totalPrice = useSelector(cartValueSelector);
-  /* const totalPrice = cart.reduce(
-    (total, product) => total + product.price * product.quantity,
-    0
-  ); */
 
   function handleFormSubmit(event) {
     event.preventDefault();
@@ -104,10 +100,7 @@ export default function Cart() {
                 Enter your email and then click on pay and your products will be
                 delivered to you on the same day!
                 <br />
-                <em>
-                  Enter your own Stripe Publishable Key in Cart.js for the
-                  checkout to work
-                </em>
+                <em>We use Stripe to process your payment.</em>
               </p>
               <Input
                 placeholder="Email"

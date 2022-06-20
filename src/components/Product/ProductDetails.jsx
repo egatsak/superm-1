@@ -61,9 +61,7 @@ export default function ProductDetails(props) {
         </div>
         <Switch>
           <Route exact path={match.path}>
-            <ProductDetailInfo
-              product={product}
-            />
+            <ProductDetailInfo product={product} />
           </Route>
 
           <Route path={match.path + "/nutrition"}>
