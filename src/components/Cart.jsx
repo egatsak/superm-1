@@ -31,7 +31,7 @@ export default function Cart() {
           lineItems: lineItems,
           mode: "payment",
           successUrl:
-            "https://redux--celadon-monstera-6b69be.netlify.app/paymentsuccessful",
+            "https://celadon-monstera-6b69be.netlify.app/paymentsuccessful",
           cancelUrl: "https://www.ya.ru",
           customerEmail: email,
         })
