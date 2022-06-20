@@ -9,6 +9,7 @@ export default function Footer() {
         className={styles.bold}
         href="https://github.com/egatsak/superm-1"
         target="_blank"
+        rel="noopener"
       >
         egatsak
       </a>
@@ -19,6 +20,7 @@ export default function Footer() {
           className={styles.bold}
           href="https://react-tutorial.app"
           target="_blank"
+          rel="noopener"
         >
           react-tutorial.app
         </a>
