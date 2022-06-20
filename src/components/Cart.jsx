@@ -30,7 +30,8 @@ export default function Cart() {
         .redirectToCheckout({
           lineItems: lineItems,
           mode: "payment",
-          successUrl: "https://www.google.com",
+          successUrl:
+            "https://redux--celadon-monstera-6b69be.netlify.app/paymentsuccessful",
           cancelUrl: "https://www.ya.ru",
           customerEmail: email,
         })
